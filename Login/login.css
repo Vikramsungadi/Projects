@@ -43,7 +43,7 @@ h2 {
   border: 1px solid var(--blue-light);
   padding: 25px 15px;
   border-radius: 10px;
-  box-shadow: 0 0 15px var(--blue-light);
+  box-shadow: 0 0 8px var(--blue-light);
 }
 input {
   caret-color: var(--blue-light);
@@ -135,6 +135,10 @@ form a:hover {
   margin: 15px;
   color: var(--gray);
 }
+.combined--inputs {
+  display: flex;
+  gap: 1rem;
+}
 @media (max-width: 500px) {
   .name,
   .pass {
@@ -158,5 +162,8 @@ form a:hover {
   }
   .btn:focus {
     opacity: 1;
+  }
+  .card {
+    box-shadow: 0 0 5px var(--blue-light);
   }
 }

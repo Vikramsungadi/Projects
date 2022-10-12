@@ -1,0 +1,238 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Open Sans", sans-serif;
+}
+:root {
+  --var--color-primary: rgb(124, 160, 247);
+  --var--color-secondary: rgb(124, 160, 247);
+  --var--color-shadow: rgba(0, 212, 255, 0.7);
+  --var--color-gradient: linear-gradient(
+    90deg,
+    rgba(124, 160, 247, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.card-wrapper {
+  display: flex;
+  position: relative;
+  top: 3rem;
+  padding: 2rem;
+  width: 100vw;
+  justify-content: center;
+  margin-bottom: 5rem;
+  overflow: visible;
+}
+.todo {
+  margin-right: 2rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 1rem;
+  gap: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 500px;
+  max-width: 800px;
+  box-shadow: 0 0 15px 3px rgba(188, 216, 222, 0.203);
+}
+.top--card {
+  text-align: center;
+  background: var(--var--color-gradient);
+  color: white;
+  max-height: 4rem;
+  border-radius: 10px 10px 0 0;
+}
+.bottom--card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid rgba(0, 16, 255, 0.3);
+  overflow: hidden;
+  color: gray;
+  background: white;
+  border-radius: 0;
+  padding: 0 1.5rem;
+  opacity: 1;
+  transition: all 0.5s;
+  border-bottom: 0.1px solid rgb(218, 218, 218);
+}
+.strike--card {
+  opacity: 0.4;
+  transform: scaleZ(15px);
+}
+i {
+  color: var(--var--color-primary);
+  cursor: pointer;
+}
+
+.top--card h1 {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.bottom--card p {
+  overflow: auto;
+  scrollbar-width: none;
+  max-width: 70vw;
+  letter-spacing: 0.4px;
+  padding: 1rem;
+}
+body {
+  background: rgba(0, 212, 255, 0.08);
+}
+.input {
+  caret-color: var(--var--color-secondary);
+  color: var(--var--color-secondary);
+  display: flex;
+  flex-grow: 1;
+  font-size: 1rem;
+  padding-inline-start: 2.2rem;
+  outline: none;
+  border: none;
+  /* border-bottom: 2px solid var(--var--color-shadow); */
+
+  /* box-shadow: 0 0 5px 1px var(--var--color-shadow); */
+}
+.input2 {
+  flex-grow: 1;
+  padding-inline-start: 0;
+}
+.input:focus .btn--div {
+  box-shadow: 0 0 10px 1px var(--var--color-shadow);
+}
+.input--holder {
+  width: 100%;
+  padding: 2px;
+  background: white;
+  border-bottom: 0.1px solid rgb(218, 218, 218);
+  /* border-left: 4px solid rgba(0, 16, 255, 0.3);
+  border-radius: 0 0 5px 5px; */
+}
+.btn--div {
+  padding: 5px;
+
+  display: flex;
+  gap: 1rem;
+  border-radius: 5px;
+  /* border-left: 3px solid var(--var--color-secondary);
+  border-right: 3px solid var(--var--color-secondary); */
+  /* background-color: white; */
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  border: none;
+}
+.btn,
+.btn2 {
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  background: var(--var--color-gradient);
+  max-width: 25%;
+  /* width: 100px; */
+}
+.icon {
+  display: flex;
+  gap: 1rem;
+  margin-left: 10px;
+}
+/* .check {
+  position: fixed;
+  position: relative;
+  right: -50px;
+} */
+
+.strike {
+  text-decoration: line-through;
+}
+/* .checked--icons {
+  opacity: 0.5;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  height: 2px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--var--color-secondary);
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--var--color-gradient);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--var--color-primary);
+}
+::placeholder {
+  color: var(--var--color-primary);
+  opacity: 0.5;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 550px) {
+  .card-wrapper {
+    margin: auto;
+    padding: 1rem;
+  }
+  .top--card h1 {
+    font-size: 1.2rem;
+  }
+  .main {
+    min-width: 100%;
+  }
+  .main .btn--div {
+    padding: 0;
+  }
+  .btn--div {
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  .main .input,
+  .input2 {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+  .bottom--card p {
+    padding: 1rem 0;
+  }
+  .input--holder {
+    padding: 2px;
+    background: white;
+  }
+  .btn {
+    padding: 0.8rem 1.2rem;
+    margin-right: 10px;
+  }
+  .todo {
+    /* margin: 2rem 2rem; */
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.none {
+  display: none;
+}
